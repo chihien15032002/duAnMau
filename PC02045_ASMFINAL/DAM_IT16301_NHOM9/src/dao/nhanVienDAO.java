@@ -11,6 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.nhanVien;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -75,10 +79,10 @@ public void insert(nhanVien model){
     
     private nhanVien readFromResultSet(ResultSet rs) throws SQLException{
        nhanVien model=new nhanVien();
-        model.setMaNV(rs.getString("MaNV"));
-        model.setMatKhau(rs.getString("MatKhau"));
-        model.setHoTen(rs.getString("HoTen"));
-        model.setVaiTro(rs.getBoolean("VaiTro"));
+        model.setMaNV(rs.getString(1));
+        model.setMatKhau(rs.getString(2));
+        model.setHoTen(rs.getString(3));
+        model.setVaiTro(rs.getBoolean(4));
         return model;
     }
 }
